@@ -1,0 +1,7 @@
+title: "My Portfolio"
+description: "Welcome to my GitHub portfolio"
+baseurl: "" # Leave blank unless you're hosting in a subdirectory
+url: "https://<your-username>.github.io" # Replace with your GitHub Pages URL
+theme: minima # Default theme for Jekyll
+plugins:
+  - jekyll-feed
