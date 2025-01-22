@@ -5,3 +5,7 @@ url: "https://<your-username>.github.io" # Replace with your GitHub Pages URL
 theme: minima # Default theme for Jekyll
 plugins:
   - jekyll-feed
+collections:
+  projects:
+    output: true
+
