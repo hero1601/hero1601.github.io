@@ -2,7 +2,7 @@ title: "My Portfolio"
 description: "Welcome to my GitHub portfolio"
 baseurl: "" # Leave blank unless you're hosting in a subdirectory
 url: "https://hero1601.github.io" # Replace with your GitHub Pages URL
-theme: minima # Default theme for Jekyll
+theme: jekyll-theme-cayman # Default theme for Jekyll
 plugins:
   - jekyll-feed
 collections:
