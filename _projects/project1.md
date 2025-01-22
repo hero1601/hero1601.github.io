@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Project 1"
-description: "A brief description of Project 1"
+title: "IOT Temperature Sensor"
+description: "Built an IoT temperature sensor using Raspberry Pi that provided temperature data for my room at a 30-minute interval."
 ---
 ## Project 1
 - **Description:** This project does X, Y, Z.
