@@ -6,16 +6,15 @@
 <body>
     <h1>Home</h1>
     <p>Welcome to the home page.</p>
-    <p><a href="about.php">About</a></p>
+    <section id="projects">
+      <h2>My Projects</h2>
+      <ul>
+        {% for project in site.projects %}
+        <li>
+          <a href="{{ project.url }}">{{ project.title }}</a> - {{ project.description }}
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
 </body>
-<section id="projects">
-    <h2>My Projects</h2>
-    <ul>
-      {% for project in site.projects %}
-      <li>
-        <a href="{{ project.url }}">{{ project.title }}</a> - {{ project.description }}
-      </li>
-      {% endfor %}
-    </ul>
-  </section>
 </html>
