@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: black;
+    color: white; /* Optional: sets text color to white to contrast with the black background */
 }
 
 header {
