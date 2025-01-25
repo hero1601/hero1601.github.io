@@ -1,20 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home</title>
-</head>
-<body>
-    <h1>Home</h1>
-    <p>Welcome to the home page.</p>
-    <section id="projects">
-      <h2>My Projects</h2>
-      <ul>
+---
+layout: default
+title: Home
+---
+
+<h1>Welcome to {{ site.title }}</h1>
+<p>Welcome to the home page.</p>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <ul>
         {% for project in site.projects %}
         <li>
-          <a href="{{ project.url }}">{{ project.title }}</a> - {{ project.description }}
+            <a href="{{ project.url }}">{{ project.title }}</a> - {{ project.description }}
         </li>
         {% endfor %}
-      </ul>
-    </section>
-</body>
-</html>
+    </ul>
+</section>
