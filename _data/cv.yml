@@ -1,97 +1,82 @@
-- title: General Information
-  type: map
-  contents:
-    - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
-    - name: Languages
-      value: English, German
-
-- title: Education
-  type: time_table
-  contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
-
-- title: Experience
-  type: time_table
-  contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
-      description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
-      description:
-        - Description 1.
-        - Description 2.
-
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
-      description:
-
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
-
-- title: Open Source Projects
-  type: time_table
-  contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
-
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
-
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+name: Madhusudan Agarwal
+contact:
+  email: amadhusudan1601@gmail.com
+  phone: +1 (617) 959-0067
+  location: San Diego, CA
+  linkedin: https://www.linkedin.com/in/madhusudan-agarwal-b20185247/
+  github: https://github.com/hero1601
+education:
+- institution: University of California, San Diego
+  degree: M.S. in Computer Science
+  duration: Sept 2024 - Dec 2025
+  gpa: 4/4
+  coursework:
+  - Deep Learning
+  - Parallel Computation
+  - Algorithms
+  - Software Engineering
+- institution: Indian Institute of Technology, Kharagpur
+  degree: B.Tech in Electronics and Electrical Communication
+  duration: Jul 2019 - Jun 2023
+  gpa: 3.91/4
+  minor: Computer Science
+work_experience:
+- title: Software Development Engineer I
+  company: DealShare
+  duration: Aug 2023 - Sept 2024
+  responsibilities:
+  - Built distributed microservices in Java (Spring Boot) and Amazon SQS to handle
+    1M+ monthly requests.
+  - Led unit testing initiatives, reducing bug reports by 15%.
+  - Integrated Keycloak to secure access for 100+ internal users.
+- title: Software Engineering Intern
+  company: Becton Dickinson
+  duration: Jun 2023 - Jul 2023
+  responsibilities:
+  - Automated web app tests using Cypress for 100% cross-browser compatibility.
+  - Reduced UI-related bugs by 40% during QA cycles.
+- title: Software Developer Intern
+  company: Citrix Systems
+  duration: May 2022 - Jul 2022
+  responsibilities:
+  - Built and optimized backend services using Golang and MongoDB.
+  - Reduced API latency by 30% and replaced Excel workflows with a web portal.
+projects:
+- title: Trajectory Prediction
+  duration: Mar 2025 - May 2025
+  description:
+  - Trained a Social LSTM on Argoverse 2 dataset for trajectory prediction.
+  - Achieved 7.98 MSE on validation and 8.67 MSE on test set.
+  github: https://github.com/hero1601/trajectory-prediction
+- title: CUDA Matrix Multiplication
+  duration: Sept 2024 - Dec 2024
+  description:
+  - Implemented high-throughput matrix multiplication with CUDA.
+  - Achieved 4000 GFLOPS with shared memory and instruction-level optimizations.
+skills:
+  programming_languages:
+  - C
+  - C++
+  - C#
+  - Java
+  - Go
+  - Python
+  - Objective-C
+  technology_stack:
+  - SQL
+  - MongoDB
+  - Git
+  - gRPC
+  - Docker
+  - Cypress
+  - Kafka
+  - AWS
+  - CI/CD
+  domains:
+  - Distributed Systems
+  - AI/ML
+  - Multi-threading
+  - OOP
+achievements:
+- Global rank 375 in Google Kickstart Round E out of 8,000+ participants.
+- All India Rank 844 in JEE Advanced 2019 among 0.2 million candidates.

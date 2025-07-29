@@ -1,84 +1,128 @@
 {
-  "name": "Madhusudan Agarwal",
-  "contact": {
+  "basics": {
+    "name": "Madhusudan Agarwal",
     "email": "amadhusudan1601@gmail.com",
     "phone": "+1 (617) 959-0067",
-    "location": "San Diego, CA",
-    "linkedin": "https://www.linkedin.com/in/madhusudan-agarwal-b20185247/",
-    "github": "https://github.com/hero1601"
+    "location": {
+      "city": "San Diego",
+      "region": "CA"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "madhusudan-agarwal-b20185247",
+        "url": "https://www.linkedin.com/in/madhusudan-agarwal-b20185247/"
+      },
+      {
+        "network": "GitHub",
+        "username": "hero1601",
+        "url": "https://github.com/hero1601"
+      }
+    ]
   },
   "education": [
     {
       "institution": "University of California, San Diego",
-      "degree": "M.S. in Computer Science",
-      "duration": "Sept 2024 - Dec 2025",
-      "gpa": "4/4",
-      "coursework": ["Deep Learning", "Parallel Computation", "Algorithms", "Software Engineering"]
+      "area": "Computer Science",
+      "studyType": "Master's",
+      "startDate": "2024-09",
+      "endDate": "2025-12",
+      "gpa": "4.0",
+      "courses": ["Deep Learning", "Parallel Computation", "Algorithms", "Software Engineering"]
     },
     {
       "institution": "Indian Institute of Technology, Kharagpur",
-      "degree": "B.Tech in Electronics and Electrical Communication",
-      "duration": "Jul 2019 - Jun 2023",
-      "gpa": "3.91/4",
-      "minor": "Computer Science"
+      "area": "Electronics and Electrical Communication",
+      "studyType": "Bachelor's",
+      "startDate": "2019-07",
+      "endDate": "2023-06",
+      "gpa": "3.91",
+      "courses": ["Minor in Computer Science"]
     }
   ],
-  "work_experience": [
+  "work": [
     {
-      "title": "Software Development Engineer I",
       "company": "DealShare",
-      "duration": "Aug 2023 - Sept 2024",
-      "responsibilities": [
-        "Built distributed microservices in Java (Spring Boot) and Amazon SQS to handle 1M+ monthly requests.",
-        "Led unit testing initiatives, reducing bug reports by 15%.",
-        "Integrated Keycloak to secure access for 100+ internal users."
+      "position": "Software Development Engineer I",
+      "startDate": "2023-08",
+      "endDate": "2024-09",
+      "summary": "Built distributed microservices and led internal security and testing improvements.",
+      "highlights": [
+        "Handled 1M+ monthly requests using Java (Spring Boot) and Amazon SQS.",
+        "Reduced bug reports by 15% via rigorous unit testing.",
+        "Integrated Keycloak for internal access control."
       ]
     },
     {
-      "title": "Software Engineering Intern",
       "company": "Becton Dickinson",
-      "duration": "Jun 2023 - Jul 2023",
-      "responsibilities": [
-        "Automated web app tests using Cypress for 100% cross-browser compatibility.",
-        "Reduced UI-related bugs by 40% during QA cycles."
+      "position": "Software Engineering Intern",
+      "startDate": "2023-06",
+      "endDate": "2023-07",
+      "highlights": [
+        "Automated testing with Cypress for 100% cross-browser compatibility.",
+        "Reduced UI bugs by 40% during QA cycles."
       ]
     },
     {
-      "title": "Software Developer Intern",
       "company": "Citrix Systems",
-      "duration": "May 2022 - Jul 2022",
-      "responsibilities": [
-        "Built and optimized backend services using Golang and MongoDB.",
-        "Reduced API latency by 30% and replaced Excel workflows with a web portal."
+      "position": "Software Developer Intern",
+      "startDate": "2022-05",
+      "endDate": "2022-07",
+      "highlights": [
+        "Optimized Golang backend and improved filtering speed by 20%.",
+        "Replaced Excel workflows with a web portal, cutting manual effort by 50%."
       ]
     }
   ],
   "projects": [
     {
-      "title": "Trajectory Prediction",
-      "duration": "Mar 2025 - May 2025",
-      "description": [
-        "Trained a Social LSTM on Argoverse 2 dataset for trajectory prediction.",
-        "Achieved 7.98 MSE on validation and 8.67 MSE on test set."
-      ],
-      "github": "https://github.com/hero1601/trajectory-prediction"
+      "name": "Trajectory Prediction",
+      "startDate": "2025-03",
+      "endDate": "2025-05",
+      "description": "Trained a Social LSTM on Argoverse 2 dataset to predict ego-agent trajectories.",
+      "url": "https://github.com/hero1601/trajectory-prediction",
+      "highlights": [
+        "Achieved 7.98 MSE on validation and 8.67 MSE on test set.",
+        "Implemented custom social pooling over 10,000+ multi-agent scenes."
+      ]
     },
     {
-      "title": "CUDA Matrix Multiplication",
-      "duration": "Sept 2024 - Dec 2024",
-      "description": [
-        "Implemented high-throughput matrix multiplication with CUDA.",
-        "Achieved 4000 GFLOPS with shared memory and instruction-level optimizations."
+      "name": "CUDA Matrix Multiplication",
+      "startDate": "2024-09",
+      "endDate": "2024-12",
+      "description": "High-throughput CUDA kernel for matrix multiplication using performance tuning techniques.",
+      "highlights": [
+        "4000 GFLOPS for N=2048 with shared memory, loop unrolling, and coalescing.",
+        "30× faster than naive kernel."
       ]
     }
   ],
-  "skills": {
-    "programming_languages": ["C", "C++", "C#", "Java", "Go", "Python", "Objective-C"],
-    "technology_stack": ["SQL", "MongoDB", "Git", "gRPC", "Docker", "Cypress", "Kafka", "AWS", "CI/CD"],
-    "domains": ["Distributed Systems", "AI/ML", "Multi-threading", "OOP"]
-  },
-  "achievements": [
-    "Global rank 375 in Google Kickstart Round E out of 8,000+ participants.",
-    "All India Rank 844 in JEE Advanced 2019 among 0.2 million candidates."
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["C", "C++", "C#", "Java", "Go", "Python", "Objective-C"]
+    },
+    {
+      "name": "Technology Stack",
+      "keywords": ["SQL", "MongoDB", "Git", "gRPC", "Docker", "Cypress", "Kafka", "AWS", "CI/CD"]
+    },
+    {
+      "name": "Domains",
+      "keywords": ["Distributed Systems", "AI/ML", "Multi-threading", "OOP"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Google Kickstart Round E",
+      "date": "2023",
+      "awarder": "Google",
+      "summary": "Global rank 375 out of more than 8,000 participants."
+    },
+    {
+      "title": "JEE Advanced",
+      "date": "2019",
+      "awarder": "IIT Joint Entrance Exam",
+      "summary": "All India Rank 844 out of 0.2 million candidates."
+    }
   ]
 }
