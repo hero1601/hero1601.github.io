@@ -3,7 +3,7 @@ layout: page
 title: Matrix Multiplication Optimization
 description: Optimizing GEMM performance across GPU and CPU architectures
 img: assets/img/matrix-opt.jpg
-importance: 1
+importance: 2
 category: work
 ---
 

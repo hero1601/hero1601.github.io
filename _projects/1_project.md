@@ -11,8 +11,7 @@ This project was built as part of the **Trajectory Prediction Challenge** using 
 
 We used a modified version of Argoverse 2, with each scenario containing **11 seconds of bird's-eye-view data** sampled at **10Hz**, including agent centroid and heading. The model predicts future trajectories in challenging urban environments with long-range interactions and social complexity.
 
-Explore the code on GitHub:  
-👉 [Trajectory-Prediction](https://github.com/hero1601/trajectory-prediction)
+[🔗 View the code on GitHub](https://github.com/hero1601/trajectory-prediction)
 
 ---
 
