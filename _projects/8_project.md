@@ -1,81 +1,118 @@
 ---
 layout: page
-title: project 8
-description: an other project with a background image and giscus comments
-img: assets/img/9.jpg
-importance: 2
+title: Clarifying Questions in Open-Domain Dialogue
+description: Machine learning techniques for detecting and generating clarifying questions with ClariQ benchmark.
+img: assets/img/clarifying-bg.jpg
+importance: 1
 category: work
-giscus_comments: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project explores how conversational AI systems can proactively ask clarifying questions when faced with ambiguous user input. Our goal is to make dialogue agents more robust and user-friendly, particularly in open-domain, information-seeking conversations.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+[🔗 View the code on GitHub](https://github.com/ritikalath/NLP_TeamRAMA)
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+---
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+## Introduction
+
+Users often struggle to articulate complex needs in a single query, causing frustration and repeated reformulations. By **detecting ambiguity** and asking targeted clarifying questions, our system improves both understanding and user satisfaction.
+
+A conversational system's primary aim is to provide helpful answers to user requests. However, when faced with ambiguous queries, it's better for the system to *ask clarifying questions* rather than risk an incorrect response.
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/clarification_examples.png" class="img-fluid rounded z-depth-1 w-50"%}
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+## Related Work
+
+Our work combines advances in:
+- **Clarifying question generation** ([Aliannejadi et al., 2019][1])
+- **Dialogue system evaluation**, covering both task-oriented and open-domain settings
+
+---
+
+## Task Design
+
+- **Ambiguity Scoring:** Each user request receives a score (1–4) signifying the need for clarification.
+- **Clarifying Question Retrieval:** The system selects the most relevant clarifying questions for ambiguous inputs.
+- **User Answers:** For every clarifying question, sample user answers simulate real dialogues.
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/system_architecture.png" class="img-fluid rounded z-depth-1 w-50"%}
 </div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+
+**Tasks:**
+1. *Classification*: Predict if (and how urgently) a clarification is needed for a given user query.
+2. *Retrieval*: For ambiguous queries, return a ranked list of clarifying questions.
+
+---
+
+## Dataset
+
+- **ClariQ Dataset:** A benchmark collection for exploring clarifying questions in conversational search. It includes user requests ranging from clear to highly ambiguous, with each request annotated for clarification need.
+
+- **Ambiguity Labels:** Requests are rated on a scale from 1 (clear) to 4 (very ambiguous), guiding models on when to ask clarifying questions.
+
+- **Clarifying Questions and Answers:** For ambiguous queries, a pool of clarifying questions is provided along with sample user answers, enabling multi-turn dialogue modeling.
+
+- **Document Collections:** Optionally, associated web documents enable evaluation of how clarifications improve downstream search quality.
+
+This dataset supports training and evaluating models that detect ambiguity and generate or retrieve effective clarifying questions for better user interaction.
+
+---
+
+## Methods
+
+#### A. Classification
+
+We treat “when to ask clarifying questions?” as a multi-class classification task, using transformer models:
+
+- Models used: BERT, RoBERTa, DeBERTa, ELECTRA
+- Best result: ELECTRA gave highest F1, RoBERTa gave top accuracy.
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/classification_result.png" class="img-fluid rounded z-depth-1 w-50"%}
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+#### B. Retrieval
 
-{% raw %}
+“How to select the clarifying question?” We explore two retrieval strategies:
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+1. **BM25 + Transformer Re-ranker:** Retrieve top-N candidates, re-rank with BERT-family models.
+2. **Full Bank Ranking:** Direct transformer ranking over the entire question bank.
+
+- Evaluation: Recall@k for question relevance; MRR, Precision@k, nDCG for document relevance.
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/ques-relevance.png" class="img-fluid rounded z-depth-1 w-50"%}
 </div>
-```
 
-{% endraw %}
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/doc-relevance.png" class="img-fluid rounded z-depth-1 w-50"%}
+</div>
+
+---
+
+## Results
+
+- **Classification:** ELECTRA achieved the best F1; RoBERTa achieved top accuracy for clarity detection.
+- **Retrieval:** 
+  - *Re-ranking*: BERT performed best for question recall.
+  - *Full ranking*: ELECTRA was strongest overall, especially for large banks.
+  - *Document relevance*: RoBERTa achieved the best document retrieval scores.
+
+---
+
+## Conclusion
+
+Our system reliably detects ambiguity and suggests useful clarifying questions—**measurably improving search and dialogue quality** on the ClariQ benchmark. Insights:
+- Attention-based transformers (ELECTRA, RoBERTa) excel at both detecting and resolving ambiguity.
+- Re-ranking boosts Recall@k compared to traditional IR systems.
+- Asking clarifying questions improves downstream results in open-domain dialogue.
+
+---
+
+[1]: https://doi.org/10.1145/3331184.3331265
+
