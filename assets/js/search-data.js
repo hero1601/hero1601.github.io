@@ -62,9 +62,9 @@ ninja.data = [{
           description: "Deep learning-based trajectory prediction using Agroverse 2 dataset.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-food-delivery",
+          title: 'Food Delivery',
+          description: "Real-time, containerized food delivery system built during OpenSoft at IIT Kharagpur.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
@@ -92,9 +92,9 @@ ninja.data = [{
           description: "Optimizing GEMM performance across GPU and CPU architectures",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+            },},{id: "projects-clarifying-questions-in-open-domain-dialogue",
+          title: 'Clarifying Questions in Open-Domain Dialogue',
+          description: "Machine learning techniques for detecting and generating clarifying questions with ClariQ benchmark.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/8_project/";
             },},{id: "projects-project-9",
