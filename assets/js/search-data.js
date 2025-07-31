@@ -67,6 +67,11 @@ ninja.data = [{
           description: "Real-time, containerized food delivery system built during OpenSoft at IIT Kharagpur.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-8xengineers",
+          title: '8xEngineers',
+          description: "A lightweight journal and note-taking extension integrated within Visual Studio Code for seamless progress tracking and organization.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{id: "projects-matrix-multiplication-optimization",
           title: 'Matrix Multiplication Optimization',
           description: "Optimizing GEMM performance across GPU and CPU architectures",
