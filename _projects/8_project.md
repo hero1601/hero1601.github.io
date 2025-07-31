@@ -2,7 +2,7 @@
 layout: page
 title: Clarifying Questions in Open-Domain Dialogue
 description: Machine learning techniques for detecting and generating clarifying questions with ClariQ benchmark.
-img: assets/img/clarifying-bg.jpg
+img: assets/img/clariq.png
 importance: 1
 category: work
 ---
