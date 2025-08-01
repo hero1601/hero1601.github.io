@@ -2,7 +2,7 @@
 layout: page
 title: Food Delivery
 description: Real-time, containerized food delivery system built during OpenSoft at IIT Kharagpur.
-img: assets/img/food-bg.png
+img: assets/img/FD.png
 importance: 1
 category: work
 ---
@@ -59,9 +59,7 @@ The platform followed a modular, microservice-based design with clean interfaces
 - Integrated with Kafka and Redis for **event-based coordination**
 - Led daily standups, handled cross-group coordination, and reviewed PRs
 
----
-
-### API Endpoints
+#### API Endpoints
 
 | Endpoint          | Description                                      |
 |-------------------|--------------------------------------------------|

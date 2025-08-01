@@ -1,80 +1,69 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
-importance: 3
+title: Healthcare IT
+description: Terminology management API for healthcare data, featuring gRPC acceleration and robust SQL backbone.
+img: assets/img/healthcare-it.jpg
+importance: 1
 category: fun
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project is a **Healthcare IT Terminology Service** designed to provide fast, efficient, and standards-compliant access to healthcare coding systems (SNOMED, ICD, etc.), essential for modern healthcare applications. The service is built on a **three-layer architecture** to ensure scalability and maintainability.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The solution leverages:
+- **MS SQL Server** as the backend, providing durable medical term storage and queries.
+- **C#** for the business logic and server APIs.
+- **gRPC** for performant, binary-serialization-based communication between service clients and backend.
+- **Dapper** for high-efficiency object-relational mapping within the C# backend.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+[🔗 View the code on GitHub](https://github.com/hero1601/Healthcare-IT)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Project Goals
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- Offer a reusable, modular terminology service for healthcare data integration.
+- Provide **low-latency APIs** for querying and managing standard terminologies.
+- Ensure high throughput and scalability for enterprise deployments.
+- Simplify back-end integration for EHR (Electronic Health Records) and clinical applications.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### System Architecture
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+- **Presentation Layer:**  
+  gRPC exposes a strongly-typed, high-efficiency API surface using Protocol Buffers for compact, binary serialization. This enables fast, low-latency communication between clients and the backend, making it ideal for performance-sensitive healthcare applications.
 
-{% endraw %}
+- **Application Layer:**  
+  Implemented in C#, this layer manages business logic, request validation, and query orchestration. It acts as the intermediary that processes incoming requests and coordinates access to data repositories, ensuring modularity and maintainability.
+
+- **Data Layer:**  
+  SQL Server hosts a normalized schema of healthcare terminology concepts, supporting complex hierarchies and mappings. Dapper ORM is used for high-performance data access, efficiently translating SQL query results into C# models with minimal overhead.
+
+---
+
+### Implementation Details
+
+- **gRPC APIs:** Enables lightweight, binary-serialized communications, minimizing latency for high-frequency use cases.
+- **Dapper ORM:** Selected for its performance in mapping query results directly to C# models, outperforming heavier ORMs in read-intensive health data scenarios.
+- **SQL Server Schema:** Carefully normalized to handle medical coding hierarchies and cross-mappings.
+- **Security:** Designed with secure authentication endpoints and validation checks suitable for healthcare use.
+
+---
+
+### Challenges & Solutions
+
+- **Performance:** Adopted gRPC for all major API surfaces, cutting serialization/deserialization overhead versus REST/JSON.
+- **Scalability:** Three-tier separation allowed for horizontal scaling of the API server while offloading queries to SQL.
+- **Data Mapping:** Used Dapper to eliminate bottlenecks of traditional ORMs when working with large medical vocabularies.
+- **Extensibility:** Modular C# codebase makes it easy to plug in new terminology sets or switch out underlying database engines if required.
+
+---
+
+### Key Takeaways
+
+- Combining **gRPC** and **Dapper** achieves modern cloud-ready data performance for healthcare IT workloads.
+- Three-layer architecture enforces clean separation of presentation, business, and data access responsibilities.
+- Efficient terminology management is essential for rapid development and regulatory compliance in healthcare software.
+- Leveraging open protocols and lightweight libraries creates IT solutions that are both powerful and maintainable.
+
+---

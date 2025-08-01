@@ -1,80 +1,81 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
+title: IoT Temperature Sensor
+description: Raspberry Pi-based temperature monitoring system with real-time data transfer and visualization.
+img: assets/img/iot-temp.png
+importance: 1
 category: fun
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project is an **IoT Temperature Sensor** system implemented using a Raspberry Pi, focused on providing real-time and historical temperature readings for monitoring environments. Data is transmitted at regular intervals using a combination of efficient networking and messaging protocols, and visualized for immediate insights.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The solution leverages multiple technologies:
+- **gRPC** for fast, efficient device-to-server data transfer.
+- **MQTT** for lightweight publish/subscribe messaging between devices and receivers.
+- **MS SQL Server** for robust time-series data storage.
+- **C#** for the back-end service logic, handling ingestion and data persistence.
+- **Python** for front-end system interaction and input management.
+- **Power BI** for live and historical dashboard visualization.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+[🔗 View the code on GitHub](https://github.com/hero1601/IOT-Temperature)
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+---
+
+### Project Goals
+
+- Automate and digitize household temperature tracking for improved comfort and safety.
+- Achieve dependable, low-latency data delivery across the home network.
+- Build a scalable pipeline from sensing to user dashboarding.
+- Enable alerts for abnormal temperature fluctuations.
+
+---
+
+### System Architecture
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center">
+    {% include figure.liquid path="assets/img/iot-arch.png" class="img-fluid rounded z-depth-1 w-50"%}
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+*Raspberry Pi → gRPC (C# backend) → MS SQL Server, MQTT broker for real-time notifications, Power BI for analytics.*
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+- **Hardware:** Raspberry Pi with a temperature sensor placed in the living area.
+- **Communication:** gRPC for direct backend communication, MQTT for broadcast updates.
+- **Storage & Backend:** C# server persists data to MS SQL Server.
+- **Frontend/Data collection:** Python scripts handle data acquisition and send readings.
+- **Visualization:** Power BI dashboards accessible from anywhere in the home network.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### Implementation Details
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+- **Data Collection:** The Raspberry Pi reads and sends temperature data every 3–5 minutes.
+- **Home Integration:** The device monitors ambient temperature in your living space and detects rapid changes.
+- **Notifications:** If temperature thresholds are crossed (e.g., room gets unusually hot), MQTT-based instant alerts sent to any subscribed device (such as your phone or a smart display).
+- **Storage & Visualization:** All records are time-stamped and stored in SQL. Power BI dashboards display current and historical readings, letting you view patterns (e.g., daytime heat, night cooling).
 
-{% endraw %}
+---
+
+### Challenges & Solutions
+
+- Ensured **low latency** for timely in-home alerts using gRPC and MQTT.
+- Integrated all components (sensor, C# backend, SQL Server, Power BI) with clear APIs to operate seamlessly within a home Wi-Fi network.
+- Maintained **messaging reliability** by configuring MQTT QoS and resilient reconnection strategies.
+- Designed for **plug-and-play extensibility** to support additional sensors or expand monitoring to other rooms.
+
+---
+
+### Results & Impact
+
+- **Consistent temperature monitoring** provided peace of mind and enabled proactive climate control.
+- **Automated alerts** reduced risk of uncomfortable or damaging temperature extremes—especially during heatwaves.
+- **Accessible dashboards** empowered household members to participate in managing home comfort.
+- **Energy efficiency** gains by aligning HVAC/fan use with real data, not just guesswork.
+
+---
+
+### Key Takeaways
+
+- Combining **gRPC and MQTT** delivers reliable, efficient communication for home IoT.
+- Power BI enables quick deployment of informative dashboards, even on a small home network.
+- Proactive environmental monitoring enhances comfort, saves energy, and increases home safety.
+- Raspberry Pi and open protocols enable powerful custom smart home solutions on an affordable budget.
