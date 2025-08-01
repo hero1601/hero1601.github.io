@@ -72,6 +72,16 @@ ninja.data = [{
           description: "A lightweight journal and note-taking extension integrated within Visual Studio Code for seamless progress tracking and organization.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
+            },},{id: "projects-iot-temperature-sensor",
+          title: 'IoT Temperature Sensor',
+          description: "Raspberry Pi-based temperature monitoring system with real-time data transfer and visualization.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_project/";
+            },},{id: "projects-healthcare-it",
+          title: 'Healthcare IT',
+          description: "Terminology management API for healthcare data, featuring gRPC acceleration and robust SQL backbone.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_project/";
             },},{id: "projects-matrix-multiplication-optimization",
           title: 'Matrix Multiplication Optimization',
           description: "Optimizing GEMM performance across GPU and CPU architectures",
