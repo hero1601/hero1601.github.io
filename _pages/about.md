@@ -19,3 +19,5 @@ I completed my undergraduate studies at the Indian Institute of Technology (IIT)
 Previously, I worked as a Software Development Engineer at DealShare, where I built distributed microservices to handle over a million monthly requests and led key initiatives in system security and code quality. I’ve also interned at Becton Dickinson and Citrix Systems, where I focused on backend optimization, test automation, and streamlining workflows.
 
 Some of my notable achievements include securing a global rank of 375 out of more than 8,000 participants in Google Kickstart, and an All India Rank of 844 in JEE Advanced 2019 among 0.2 million candidates.
+
+<p><a href="/projects/">See All My Projects →</a></p>
