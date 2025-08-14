@@ -1,80 +1,115 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: Document-Chat
+description: An AI-powered document chat application enabling conversational interaction with documents.
+img: assets/img/document-chat-bg.jpg
+importance: 1
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+This project is an **AI-powered document chat application** that allows users to conversationally interact with uploaded documents such as PDFs.  
+Powered by **LangChain**, **LLaMA** (`llama3-70b-8192`), and **HuggingFace embeddings**, it transforms static document content into a dynamic, searchable chat experience.
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+The system offers **optional user login**:
+- **Login mode**: Enables personalization, **persistent chat history**, and document recall when users return.  
+- **Guest mode**: Lets users explore documents without storing personal data.  
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+It supports **multiple concurrent chat sessions**, so users can:
+- Keep different documents in different chats without mixing contexts.  
+- Switch between chats to query multiple sources in parallel.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+Built using **Python** and **Streamlit**, this app delivers a balance of interactivity, scalability, and privacy.
+
+[🔗 View the code on GitHub](https://github.com/hero1601/document-chat)  
+[🚀 Try the Live App](https://document-chatting.streamlit.app)  
+
+---
+
+### Project Goals
+- Enable **real-time conversational AI** over uploaded documents.  
+- Integrate **LangChain** and **LLaMA** for accurate, context-aware retrieval.  
+- Provide **privacy flexibility** through login or guest mode.  
+- Implement **persistent chat history** for returning logged-in users.  
+- Support **multiple independent chats** to organize queries by topic/document.  
+
+---
+
+### Features
+- **Multi-document & multi-chat support** – work with different PDFs simultaneously.  
+- **Persistent chat history (login mode)** – pick up conversations where you left off.  
+- **Guest mode** – instant, privacy-respecting access without data retention.  
+- **AI-powered Q&A** – retrieval-augmented generation with semantic search.  
+- **Fast similarity search** – HuggingFace `all-MiniLM-L12-v2` embeddings + FAISS vector store.  
+- **Streamlit-based interactive UI**, accessible online without install.  
+
+![UI Screenshot](assets/img/ui-screenshot.png)
+
+---
+
+### Privacy & Access Modes
+The app is built with **privacy-first** functionality:  
+- **Login mode**: Saves chats and documents for future sessions.  
+- **Guest mode**: Runs without storing any information.
+
+<div style="text-align: center; margin-top: 1rem;">
+  <video controls class="img-fluid rounded z-depth-1" width="75%">
+    <source src="{{ '/assets/img/privacy_modes.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+### Multiple Chat Sessions
+Users can open **multiple independent chats**, each working with its own set of documents — perfect for organizing queries by topic or project.
+
+<div style="text-align: center; margin-top: 1rem;">
+  <video controls class="img-fluid rounded z-depth-1" width="75%">
+    <source src="{{ '/assets/img/multi-cha.mp4' | relative_url }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### Chat History for Returning Users
+When users log in, they can **view and resume all past conversations**, making it easier to continue research without re-uploading documents.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+<div class="col-sm mt-3 mt-md-0" style="text-align: center;">
+    {% include figure.liquid path="assets/img/chat-history.png" title="Output Dataset Visualization" class="img-fluid rounded z-depth-1 w-50" %}
 </div>
-```
 
-{% endraw %}
+---
+
+### Technical Overview
+- **Document Processing**  
+  - PDF loading and text chunking for optimized retrieval.  
+  - Semantic embeddings via HuggingFace models.  
+  - Vector database storage in FAISS.
+
+- **Conversational AI**  
+  - LangChain’s `ConversationalRetrievalChain` for retrieval-augmented generation.  
+  - LLaMA (`llama3-70b-8192`) for high-quality, context-grounded answers.  
+  - Separate memory per chat session.  
+
+- **Session Management**  
+  - Multi-chat handling for multiple document sets.  
+  - Persistent storage for logged-in users.  
+  - Temporary, in-session storage for guest mode.  
+
+<div class="col-sm mt-3 mt-md-0" style="text-align: center;">
+    {% include figure.liquid path="assets/img/doc-chat-archi.png" title="Architecture" class="img-fluid rounded z-depth-1 w-50" %}
+</div>
+
+---
+
+### Key Takeaways
+- Combines **semantic search** with **generative AI** for powerful document exploration.  
+- **Multiple concurrent chat sessions** keep work organized.  
+- **Persistent chat history** boosts return-user productivity.  
+- Privacy-respecting **guest mode** encourages adoption.  
+- Fully deployed online for instant access.
+
+---
+
+This project is an example of how **retrieval-augmented generation** can be extended with **multi-session management** and **chat memory persistence** to create a seamless and intelligent document assistant.

@@ -3,7 +3,7 @@ layout: page
 title: Food Delivery
 description: Real-time, containerized food delivery system built during OpenSoft at IIT Kharagpur.
 img: assets/img/FD.png
-importance: 1
+importance: 2
 category: work
 ---
 
