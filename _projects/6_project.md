@@ -42,8 +42,6 @@ Built using **Python** and **Streamlit**, this app delivers a balance of interac
 - **Fast similarity search** – HuggingFace `all-MiniLM-L12-v2` embeddings + FAISS vector store.  
 - **Streamlit-based interactive UI**, accessible online without install.  
 
-![UI Screenshot](assets/img/ui-screenshot.png)
-
 ---
 
 ### Privacy & Access Modes
