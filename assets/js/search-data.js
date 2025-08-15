@@ -75,6 +75,11 @@ ninja.data = [{
           description: "Terminology management API for healthcare data, featuring gRPC acceleration and robust SQL backbone.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
+            },},{id: "projects-document-chat",
+          title: 'Document-Chat',
+          description: "An AI-powered document chat application enabling conversational interaction with documents.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_project/";
             },},{id: "projects-matrix-multiplication-optimization",
           title: 'Matrix Multiplication Optimization',
           description: "Optimizing GEMM performance across GPU and CPU architectures",
